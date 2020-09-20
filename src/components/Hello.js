@@ -12,3 +12,5 @@ const Hello = () => {
         </div>
     );
 }
+
+export default Hello;
