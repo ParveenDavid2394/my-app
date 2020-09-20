@@ -1,4 +1,4 @@
-// event handling
+// event handling in functions
 
 import React from 'react';
 
@@ -11,7 +11,7 @@ function FunctionClick(){
 
     return(
         <div>
-            <button onClick={ clickHandler() }>Click</button>
+            <button onClick={ clickHandler }>Click</button>
         </div>
     )
 }
