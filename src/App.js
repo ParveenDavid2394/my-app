@@ -7,6 +7,9 @@ import Hello from './components/Hello';
 import Props from './components/Props';
 import Message from './components/Message';
 import Counter from './components/Counter';
+import FunctionClick from './components/FunctionClick';
+import ClassClick from './components/ClassClick';
+import EventBind from './components/EventBind';
 
 function App() {
   return (
@@ -20,7 +23,9 @@ function App() {
             <p>This is a children element</p>
         </Props>
         <Message/>
-
+        <FunctionClick />
+        <ClassClick />
+        <EventBind />
     </div>
   );
 }
