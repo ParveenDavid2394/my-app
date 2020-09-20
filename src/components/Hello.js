@@ -5,7 +5,7 @@ import React from 'react';
 // example utilising JSX
 // const Hello = () => {
 //     return (
-//         <div>
+//         <div className="div-class">
 //             <h1>
 //                 Hello Marco using JSX
 //             </h1>
