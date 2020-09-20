@@ -6,18 +6,20 @@ import Welcome from './components/Welcome';
 import Hello from './components/Hello';
 import Props from './components/Props';
 import Message from './components/Message';
+import Counter from './components/Counter';
 
 function App() {
   return (
     <div className="App">
-      <Greet />
-      <Welcome name='Bruce Wayne' heroName='Batman'/>
-      <Hello />
-      <Props name='Marco' />
-      <Props name='Children'>
-          <p>This is a children element</p>
-      </Props>
-      <Message/>
+        <Counter />
+        <Greet />
+        <Welcome name='Bruce Wayne' heroName='Batman'/>
+        <Hello />
+        <Props name='Marco' heroName = 'IronMan'/>
+        <Props name='Children'>
+            <p>This is a children element</p>
+        </Props>
+        <Message/>
 
     </div>
   );
