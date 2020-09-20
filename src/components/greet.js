@@ -1,3 +1,5 @@
+// example of stateless functional component
+
 import React from 'react';
 
 // function Greet(){
