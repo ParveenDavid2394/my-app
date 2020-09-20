@@ -31,8 +31,20 @@ class Message extends Component{
         }
     }
 
+    changeMessage(){
+        // method to change state of an object
+        this.setState({
+            message: 'Thank you for subscribing',
+        })
+    }
+
     render(){
-        return <h1> {this.state.message} </h1>
+        return (
+            <div>
+                <h1> {this.state.message} </h1>
+                <button onClick={ () => this.changeMessage() } >Subscribe</button>
+            </div>
+        );
     }
 }
 
