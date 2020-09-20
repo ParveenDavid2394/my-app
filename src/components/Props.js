@@ -8,10 +8,14 @@
 import React from 'react';
 
 const Props = props =>{
+
+    // destructuring the props
+    const { name, heroName} = props
+
     return (
 
     <div>
-        <h1>This is a prop example with name: {props.name}</h1>
+        <h1>This is a prop example with name: {name} a.k.a {heroName} </h1>
         {props.children}
     </div>
 
