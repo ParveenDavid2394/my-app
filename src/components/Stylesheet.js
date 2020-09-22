@@ -1,3 +1,5 @@
+// styling using external style sheet
+
 import React from 'react';
 import './myStyles.css';
 

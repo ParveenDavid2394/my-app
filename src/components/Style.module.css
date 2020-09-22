@@ -1,0 +1,8 @@
+/* 
+    properties from a .module.css file cannot be accessed by
+    any of the child components 
+*/
+
+.success{
+    color: green
+}

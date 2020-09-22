@@ -1,7 +1,18 @@
+/* 
+    properties from a .css file can be accessed by any child component
+    where Parent component have imported the .css file
+
+*/
+
+
 .primary{
     color: orange;
 }
 
 .font-xl{
     font-size: 72px;
+}
+
+.danger{
+    color: red
 }
