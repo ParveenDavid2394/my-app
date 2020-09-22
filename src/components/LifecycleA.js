@@ -16,7 +16,7 @@
                     - super() -> to get props from base class
                     - only place that can overwrite this.state directly
 
-                -> static getDerivedStateFromProps
+                -> static getDerivedStateFromProps(props, state)
                     - used when the state of the component depends on changes in props over time
                     - since static, cannot use 'this' keyword in the method
                     - can simply return an object that represent the new state of the component
@@ -38,16 +38,42 @@
             - when a component is being re-rendered as a result of changes to either its
               props or state
             - methods:
-                -> static getDerivedStateFromProps
+                -> static getDerivedStateFromProps(props, state)
+                    - method is called every time a component is re-rendered
+                    - used when the state depends on the props of the component
+                    - do not cause side effects. Ex: HTTP requests
+                
+                -> shouldComponentUpdate( nextProps, nextState)
+                    - dictates if the component should re-render or not
+                    - performance optimization
+                    - do not cause side effects. Ex: HTTP requests, calling the setState method
+
                 -> render
-                -> shouldComponentUpdate
-                -> getSnapshotBeforeUpdate
-                -> componentDidUpdate
+                    - only required method
+                    - read props & state and return JSX
+                    - do not change state or interact with DOM or make AJAX calls
+                    - children components lifecycle methods are also executed
+                
+                -> getSnapshotBeforeUpdate(prevProps, prevState)
+                    - called right before the changes from the virtual DOM are to be reflected
+                      in the DOM
+                    - capture some information from the DOM
+                    - method will either return null or return a value
+                    - returned value will be passed as the third parameter to the next method
+
+                -> componentDidUpdate( prevProps, prevState, snapshot)
+                    - called after render is finished in the re-render cycle
+                    - cause side affects
 
         3. Unmounting
             - when a component is being removed from the DOM
             - methods:
                 -> componentWillUnmount
+                    - method is invoked immediately before a component is unmounted and
+                      destroyed
+                    - method will do a clean up like cancelling any network requests, removing
+                      event handlers, cancelling any subsriptions and also invalidating timers
+                    - do not call the setState method
 
         4. Error Handling
             - when there is an error during rendering, in a lifecycle method or in
@@ -87,6 +113,26 @@ class LifecycleA extends Component{
         console.log('LifecycleA componentDidMount')
     }
 
+    shouldComponentUpdate(){
+        console.log('LifecycleA shouldComponentUpdate')
+        return true
+    }
+
+    getSnapshotBeforeUpdate(){
+        console.log('LifecycleA getSnapshotBeforeUpdate')
+        return null
+    }
+
+    componentDidUpdate(){
+        console.log('LifecycleA getSnapshotBeforeUpdate')
+    }
+
+    changeState = () =>{
+        this.setState({
+            name: 'Changed'
+        })
+    }
+
     render(){
 
         console.log('LifecycleA render')
@@ -94,6 +140,7 @@ class LifecycleA extends Component{
         return(
             <div>
                 <div>Lifecycle A</div> 
+                <button onClick={this.changeState}>Change State</button>
                 <LifecycleB />
             </div>
         )
