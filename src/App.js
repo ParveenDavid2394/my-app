@@ -19,11 +19,13 @@ import styles from './components/Style.module.css';
 import './components/myStyles.css';
 import Form from './components/Form';
 import LifecycleA from './components/LifecycleA';
+import FragmentDemo from './components/FragmentDemo';
 
 function App() {
   return (
     <div className="App">
-        <LifecycleA />
+    <FragmentDemo />
+        {/* <LifecycleA /> */}
         {/* <Counter />
         <Greet />
         <Welcome name='Bruce Wayne' heroName='Batman'/>
