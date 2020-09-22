@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class EventBind extends Component{
 
     constructor(props){
-        super(props);
+        super();
 
         this.state = {
             message: 'Hello'
@@ -16,17 +16,20 @@ class EventBind extends Component{
 
     // clickHandler(){
 
-    //     this.setState({
-    //         message: 'Thank You'
-    //     })
+    //     // this.setState({
+    //     //     message: 'Thank You'
+    //     // })
 
-    //     console.log(this);
+    //     console.log(this.setState());
     // }
 
     clickHandler = () =>{
         this.setState({
-            message: 'Thank you'
+            message: 'Thank you',
+            
         })
+        
+        console.log(this)
     } 
 
     render(){
