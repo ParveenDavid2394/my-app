@@ -18,10 +18,12 @@ import Inline from './components/Inline';
 import styles from './components/Style.module.css';
 import './components/myStyles.css';
 import Form from './components/Form';
+import LifecycleA from './components/LifecycleA';
 
 function App() {
   return (
     <div className="App">
+        <LifecycleA />
         {/* <Counter />
         <Greet />
         <Welcome name='Bruce Wayne' heroName='Batman'/>
@@ -41,7 +43,7 @@ function App() {
         {/* <Inline />
         <h1 className={styles.success}>This style is from a module </h1>
         <h1 className='danger'>This is a style from css file</h1> */}
-        <Form />
+        {/* <Form /> */}
     </div>
   );
 }
