@@ -20,11 +20,13 @@ import './components/myStyles.css';
 import Form from './components/Form';
 import LifecycleA from './components/LifecycleA';
 import FragmentDemo from './components/FragmentDemo';
+import RefsDemo from './components/RefsDemo';
 
 function App() {
   return (
     <div className="App">
-    <FragmentDemo />
+    <RefsDemo />
+    {/* <FragmentDemo /> */}
         {/* <LifecycleA /> */}
         {/* <Counter />
         <Greet />
