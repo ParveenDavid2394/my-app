@@ -4,6 +4,7 @@
 // 2. using refs to fetch input values
 // 3. can use callback ref approach, instead of directly accessing need to use a 
 //    function to access it
+// refs can onlu work in Classes, never in functions
 
 import React, { Component } from 'react';
 
