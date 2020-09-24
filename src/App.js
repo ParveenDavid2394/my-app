@@ -33,7 +33,7 @@ import HoverHOC from './components/HoverHOC';
 function App() {
   return (
     <div className="App">
-    <ClickHOC />
+    <ClickHOC display='Displayed'/>
     <HoverHOC />
     {/* <ErrorBoundary>
         <Errors heroName="Batman" />

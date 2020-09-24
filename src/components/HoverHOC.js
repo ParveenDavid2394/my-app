@@ -16,4 +16,4 @@ class HoverHOC extends Component {
 }
 
 // add the HOC function
-export default hoc(HoverHOC)
+export default hoc(HoverHOC,10)

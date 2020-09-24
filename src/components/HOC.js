@@ -10,11 +10,18 @@
         e.g: 
             const enhancedComponent = higherOrderComponent( originalComponent )
 
+        Important:
+            1 - when using HOC, any props sent from Parent components will be received in HOC rather than in 
+                wrapped component.
+                So always remember to pass the props to wrapped component from HOC
+            2 - HOC can also accept more arguments, just remember the wrappedComponent will always be the first
+                argument
+
 */
 // example of HOC
 import React from 'react'
 
-const hoc = WrappedComponent =>{
+const hoc = (WrappedComponent, incrementNum) =>{
     class HOC extends React.Component{
 
         // add common functionality in here
@@ -34,13 +41,18 @@ const hoc = WrappedComponent =>{
 
             // method 2
             this.setState(prevState => {
-                return { count: prevState.count + 1 }
+                return { count: prevState.count + incrementNum }
             })
         }
 
         // now can pass state and method as props
         render(){
-            return <WrappedComponent name='Marco' count={this.state.count} increment={this.clickHandler}/>
+            return <WrappedComponent name='Marco' 
+                                    count={this.state.count} 
+                                    increment={this.clickHandler} 
+                                    // send props from Parent to wrapped Component
+                                    {...this.props}
+                    />
         }
     }
 

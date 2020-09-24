@@ -10,11 +10,11 @@ class ClickHOC extends Component{
         const { name, count, increment} = this.props
         return(
             <div>
-                <button onClick={increment}>{name} Clicked {count} times</button>
+                <button onClick={increment}>{name} Clicked {count} times {this.props.display}</button>
             </div>
         )
     }
 }
 
 // add the HOC function
-export default hoc(ClickHOC)
+export default hoc(ClickHOC,5)
