@@ -28,13 +28,24 @@ import Errors from './components/Error';
 import ErrorBoundary from './components/ErrorBoundary'
 import ClickHOC from './components/ClickHOC';
 import HoverHOC from './components/HoverHOC';
+import Render from './components/Render';
+import ClickRender from './components/ClickRender';
+import HoverRender from './components/HoverRender';
 
 
 function App() {
   return (
     <div className="App">
-    <ClickHOC display='Displayed'/>
-    <HoverHOC />
+    <Render render={ (count, increment) =>  
+       ( <ClickRender count={count} increment={increment} /> )}
+
+    />
+    <Render render={(count, increment) =>
+        (<HoverRender count={count} increment={increment} />)
+    } />
+    
+    {/* <ClickHOC display='Displayed'/>
+    <HoverHOC /> */}
     {/* <ErrorBoundary>
         <Errors heroName="Batman" />
     </ErrorBoundary>
