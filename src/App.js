@@ -31,19 +31,28 @@ import HoverHOC from './components/HoverHOC';
 import Render from './components/Render';
 import ClickRender from './components/ClickRender';
 import HoverRender from './components/HoverRender';
-
+import ComponentC from './components/ComponentC';
+import { UserProvider } from './components/userContext';
 
 function App() {
   return (
     <div className="App">
-    <Render render={ (count, increment) =>  
+
+    {/* 
+        step 2 -> pass value in userProvider tag. Now all descendants of Component C can access the value if they are within the UserConsumer tag  
+    */}
+    <UserProvider value='Marco'>
+        <ComponentC />
+    </UserProvider>
+
+    {/* <Render render={ (count, increment) =>  
        ( <ClickRender count={count} increment={increment} /> )}
 
     />
     <Render render={(count, increment) =>
         (<HoverRender count={count} increment={increment} />)
-    } />
-    
+    } /> */}
+
     {/* <ClickHOC display='Displayed'/>
     <HoverHOC /> */}
     {/* <ErrorBoundary>
