@@ -17,8 +17,30 @@ import React from 'react'
 const UpdatedComponent = (OriginalComponent) =>{
     class NewComponent extends React.Component{
 
+        // add common functionality in here
+        constructor(props) {
+            super()
+
+            this.state = {
+                count: 0
+            }
+        }
+
+        clickHandler = () => {
+            //method 1
+            // this.setState({
+            //     count: this.state.count+1
+            // })
+
+            // method 2
+            this.setState(prevState => {
+                return { count: prevState.count + 1 }
+            })
+        }
+
+        // now can pass state and method as props
         render(){
-            return <OriginalComponent name='Marco'/>
+            return <OriginalComponent name='Marco' count={this.state.count} increment={this.clickHandler}/>
         }
     }
 
