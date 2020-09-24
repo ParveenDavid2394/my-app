@@ -1,7 +1,7 @@
 // this file will share the count increment functionality from HOC file
 
 import React, { Component } from 'react'
-import UpdatedComponent from './HOC'
+import hoc from './HOC'
 
 class HoverHOC extends Component {
 
@@ -16,4 +16,4 @@ class HoverHOC extends Component {
 }
 
 // add the HOC function
-export default UpdatedComponent(HoverHOC)
+export default hoc(HoverHOC)

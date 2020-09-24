@@ -14,8 +14,8 @@
 // example of HOC
 import React from 'react'
 
-const UpdatedComponent = (OriginalComponent) =>{
-    class NewComponent extends React.Component{
+const hoc = WrappedComponent =>{
+    class HOC extends React.Component{
 
         // add common functionality in here
         constructor(props) {
@@ -40,11 +40,11 @@ const UpdatedComponent = (OriginalComponent) =>{
 
         // now can pass state and method as props
         render(){
-            return <OriginalComponent name='Marco' count={this.state.count} increment={this.clickHandler}/>
+            return <WrappedComponent name='Marco' count={this.state.count} increment={this.clickHandler}/>
         }
     }
 
-    return NewComponent
+    return HOC
 }
 
-export default UpdatedComponent
+export default hoc

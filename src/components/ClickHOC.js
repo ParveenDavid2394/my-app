@@ -2,7 +2,7 @@
 
 
 import React, { Component } from 'react'
-import UpdatedComponent from './HOC'
+import hoc from './HOC'
 
 class ClickHOC extends Component{
 
@@ -17,4 +17,4 @@ class ClickHOC extends Component{
 }
 
 // add the HOC function
-export default UpdatedComponent(ClickHOC)
+export default hoc(ClickHOC)
